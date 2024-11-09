@@ -23,7 +23,7 @@ public class TrashGenerator : MonoBehaviour
 
         for (int currentCount = 1; currentCount <= TRASH_COUNT; currentCount++)
         {
-            float randomPosX = Random.Range(0, GroundConstants.GROUND_X_COUNT);
+            float randomPosX = Random.Range(0, StageConstants.GROUND_X_COUNT);
             int randomIndex = Random.Range(0, trashPrefabs.Length);
             GameObject selectedPrefab = trashPrefabs[randomIndex];
 
