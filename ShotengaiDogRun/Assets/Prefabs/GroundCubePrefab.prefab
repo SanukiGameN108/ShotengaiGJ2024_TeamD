@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6454718917240468720}
   - component: {fileID: 7690305706079688588}
   m_Layer: 0
-  m_Name: GroundCubePrefab
+  m_Name: groundCubePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

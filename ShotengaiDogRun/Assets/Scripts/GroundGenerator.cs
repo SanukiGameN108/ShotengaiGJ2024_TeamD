@@ -3,12 +3,6 @@ using UnityEngine;
 public class GroundGenerator : MonoBehaviour
 {
     public GameObject groundCubePrefab;
-    private static readonly Vector3 GROUND_CUBE_SCALE = new Vector3(1, 1, 1);
-    private static readonly Vector3 INITIAL_POSITION = new Vector3(-20, -5, 0);
-    private static readonly int GROUND_X_COUNT = 100;
-    private static readonly int GROUND_Y_COUNT = 3;
-    private static readonly int GROUND_Z_COUNT = 5;
-
     void Start()
     {
         GenerateGround();
@@ -22,17 +16,18 @@ public class GroundGenerator : MonoBehaviour
             return;
         }
 
-        for (int x = 0; x < GROUND_X_COUNT; x++)
+        for (int x = 0; x < GroundConstants.GROUND_X_COUNT; x++)
         {
-            for (int y = 0; y < GROUND_Y_COUNT; y++)
+            for (int y = 0; y < GroundConstants.GROUND_Y_COUNT; y++)
             {
-                for (int z = 0; z < GROUND_Z_COUNT; z++)
+                for (int z = 0; z < GroundConstants.GROUND_Z_COUNT; z++)
             {
                 GameObject ground = Instantiate(groundCubePrefab);
-                ground.transform.localScale = GROUND_CUBE_SCALE;
+                Vector3 groundCubeScale = GroundConstants.GROUND_CUBE_SCALE;
+                ground.transform.localScale = groundCubeScale;
                 // 配置位置を計算して設定
-                Vector3 diffPosition = new Vector3(x * GROUND_CUBE_SCALE.x, y * GROUND_CUBE_SCALE.y, z * GROUND_CUBE_SCALE.z);
-                Vector3 position = INITIAL_POSITION + diffPosition;
+                Vector3 diffPosition = new Vector3(x * groundCubeScale.x, y * groundCubeScale.y, z * groundCubeScale.z);
+                Vector3 position = GroundConstants.INITIAL_POSITION + diffPosition;
                 ground.transform.position = position;
             }
             }
