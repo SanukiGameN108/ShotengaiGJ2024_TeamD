@@ -471,6 +471,8 @@ GameObject:
   - component: {fileID: 1751653021}
   - component: {fileID: 1751653020}
   - component: {fileID: 1751653022}
+  - component: {fileID: 1751653024}
+  - component: {fileID: 1751653023}
   - component: {fileID: 1751653017}
   - component: {fileID: 1751653016}
   - component: {fileID: 1751653013}
@@ -491,7 +493,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751653012}
   serializedVersion: 4
-  m_Mass: 6.95
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -616,7 +618,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widemove: {fileID: 1751653021}
   jumpmove: {fileID: 1751653020}
+  hit_damage: {fileID: 1751653024}
   hit_ground: {fileID: 1751653022}
+  cooltimebool: {fileID: 1751653023}
 --- !u!4 &1751653019
 Transform:
   m_ObjectHideFlags: 0
@@ -674,6 +678,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   Is_Ground: 0
+--- !u!114 &1751653023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751653012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee22a386b2fa5a54b9a9085fdb64f812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoolTime_Set: 360
+  CoolTime: 0
+--- !u!114 &1751653024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751653012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ebe641d38d70848b02ec646feb48fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

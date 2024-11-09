@@ -7,9 +7,10 @@ public class CoolTimeBool : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("クールタイムの上限を設定。")]
-    private float CoolTime_Set = 0;
+    private float CoolTime_Set = 1000;
 
     //実際に計測するクールタイム。０になったらクールタイムが解消されている、という扱いになる。
+    [SerializeField]
     private float CoolTime = 0;
 
     
@@ -37,5 +38,15 @@ public class CoolTimeBool : MonoBehaviour
         //クールタイムを減算。
         if (CoolTime > 0)
             CoolTime--;
+        else
+            Debug.Log("クールタイム発生中" + CoolTime);
+    }
+
+    /// <summary>
+    /// クールタイムを初期値にセット。
+    /// </summary>
+    public void SetCoolTime()
+    {
+        CoolTime = CoolTime_Set;
     }
 }

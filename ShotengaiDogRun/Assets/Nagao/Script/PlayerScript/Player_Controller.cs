@@ -15,13 +15,35 @@ public class Player_Controller : MonoBehaviour
     private JumpMove jumpmove=null;
 
     [SerializeField]
+    [Tooltip("障害物接触のクラス")]
+    private Hit_Damage hit_damage = null;
+
+    [SerializeField]
     [Tooltip("接地判定のクラス")]
     private Hit_Ground hit_ground=null;
+
+    [SerializeField]
+    [Tooltip("クールタイム処理用のクラス。")]
+    private CoolTimeBool cooltimebool = null;
+
+    private void Start()
+    {
+        //クールタイム処理を設定。
+        hit_damage.SetAct(cooltimebool.SetCoolTime);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
+        //クールタイムが解消されていれば、動くことができる。
+        if (cooltimebool.Is_CoolTime_Clear())
+        {
+            Move();
+        }
+        else
+        {
+            cooltimebool.CountDown();
+        }
     }
 
     //移動関連の処理。
@@ -29,5 +51,14 @@ public class Player_Controller : MonoBehaviour
     {
         widemove.MovingRight();
         jumpmove.PushToJump();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "DamageObject")
+        {
+            Debug.Log("Hit");
+            cooltimebool.SetCoolTime();
+        }
     }
 }
