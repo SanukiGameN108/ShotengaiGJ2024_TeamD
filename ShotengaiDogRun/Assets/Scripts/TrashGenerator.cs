@@ -4,37 +4,34 @@ using UnityEngine;
 
 public class TrashGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject[] prefabs;
-    [SerializeField] private Vector3 spawnPosition = new Vector3(0, 0, 0);
+    [SerializeField] private GameObject[] trashPrefabs;
+    [SerializeField] private Vector3 initialPosition = new Vector3(0, 0, 0);
+    private static readonly int TRASH_COUNT = 10;  // 生成するゴミの数
 
     void Start()
     {
         GenerateTrash();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void GenerateTrash()
     {
-        if (prefabs.Length == 0)
+        if (trashPrefabs.Length == 0)
         {
-            Debug.LogWarning("Prefabが割り当てられていません！");
+            Debug.LogWarning("TrashGeneratorにPrefabが割り当てられていません！");
             return;
         }
 
-        // ランダムにprefab配列のインデックスを選択
-        int randomIndex = Random.Range(0, prefabs.Length);
-
-        GameObject selectedPrefab = prefabs[randomIndex]; // 選ばれたPrefab
-
-        // 選ばれたPrefabを生成
-        if (selectedPrefab != null)
+        for (int currentCount = 1; currentCount <= TRASH_COUNT; currentCount++)
         {
-            Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+            float randomPosX = Random.Range(0, GroundConstants.GROUND_X_COUNT);
+            int randomIndex = Random.Range(0, trashPrefabs.Length);
+            GameObject selectedPrefab = trashPrefabs[randomIndex];
+
+            if (selectedPrefab != null)
+            {
+                Vector3 randomPosition = new Vector3(randomPosX, initialPosition.y, initialPosition.z);
+                Instantiate(selectedPrefab, randomPosition, Quaternion.identity);
+            }
         }
     }
 }
