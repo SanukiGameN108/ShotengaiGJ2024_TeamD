@@ -353,6 +353,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1508870694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508870696}
+  - component: {fileID: 1508870695}
+  m_Layer: 0
+  m_Name: ObstaclesGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1508870695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508870694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93c9f879ee9b4a44a6b7a11531517be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesPrefabs:
+  - {fileID: 3638911070570068518, guid: 421fa858966d74ce8b95c60404efafe2, type: 3}
+  - {fileID: 6669599918551377397, guid: b73d2cfdb6e3a43aa9847d3357b1a630, type: 3}
+--- !u!4 &1508870696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508870694}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 184.49, y: 0.38720375, z: 231.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109430444
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,7 +447,6 @@ MonoBehaviour:
   trashPrefabs:
   - {fileID: 1798745719895892534, guid: dbfdf8622afff4bc889e4e0e824a79db, type: 3}
   - {fileID: 2690386643165219890, guid: 3f22ea7a48f594f9fb44648d99bb3b9a, type: 3}
-  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -409,3 +455,4 @@ SceneRoots:
   - {fileID: 20008925}
   - {fileID: 289273691}
   - {fileID: 2109430445}
+  - {fileID: 1508870696}
