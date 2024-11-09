@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Nagao/NagaoScene/Title.unity
+    guid: d13c434293664084c848955fa1b22362
+  - enabled: 1
+    path: Assets/Nagao/NagaoScene/PlayScene.unity
+    guid: 03ec3056535527a4fa745c37e2050e35
+  - enabled: 1
+    path: Assets/Nagao/NagaoScene/Resoult.unity
+    guid: 281e68f72a540bc4fade3a871fc0dc3a
   m_configObjects: {}
