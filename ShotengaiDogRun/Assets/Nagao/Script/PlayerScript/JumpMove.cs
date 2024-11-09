@@ -15,9 +15,9 @@ public class JumpMove : MoveSystem_Base
         
     }
 
-    //ƒXƒy[ƒXƒL[‚ð‰Ÿ‚·‚ÆƒWƒƒƒ“ƒv‚·‚éŠÖ”B
+    //ï¿½Xï¿½yï¿½[ï¿½Xï¿½Lï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆƒWï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½Öï¿½ï¿½B
     public void PushToJump()
     {
-        if()
+        
     }
 }
