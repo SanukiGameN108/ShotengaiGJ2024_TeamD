@@ -6,17 +6,11 @@ public class WideMove : MoveSystem_Base
 {
     [SerializeField]
     [Tooltip("移動スピード")]
-    private readonly float MoveSpeed = 0;
+    private float MoveSpeed = 0;
 
-    WideMove(): base()
+    public WideMove(): base()
     {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     //自動的に右に移動する関数。
@@ -24,4 +18,6 @@ public class WideMove : MoveSystem_Base
     {
         gameObject.transform.Translate(MoveSpeed,0,0);
     }
+
+     
 }

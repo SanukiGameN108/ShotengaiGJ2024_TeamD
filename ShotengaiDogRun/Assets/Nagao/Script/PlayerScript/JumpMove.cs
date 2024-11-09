@@ -4,20 +4,39 @@ using UnityEngine;
 
 public class JumpMove : MoveSystem_Base
 {
-    JumpMove() : base()
+    [SerializeField]
+    [Tooltip("ジャンプ力")]
+    float JumpPower = 0;
+
+    //接地判定用インスタンス
+    private Hit_Ground hit_ground=null;
+
+    public JumpMove() : base()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    //接地判定を取得。Awakeとは分けて書く。
+    private void Start()
     {
-        
+        hit_ground = this.gameObject.GetComponent<Hit_Ground>();
     }
 
     //スペースキーを押すとジャンプする関数。
     public void PushToJump()
     {
-        if()
+        //接地判定が空でなければ、ジャンプ処理は行わない。
+        if (hit_ground != null)
+        {
+            if (hit_ground.Is_HittingGround() && Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("ジャンプ");
+                rb.AddForce(new Vector3(0, JumpPower, 0),ForceMode.Impulse);
+            }
+        }
+        else
+        {
+            Debug.Log("接地判定用のコリジョンがありません");
+        }
     }
 }

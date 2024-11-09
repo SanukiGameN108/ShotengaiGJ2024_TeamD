@@ -22,6 +22,5 @@ public class TitleSceane : MonoBehaviour
         {
             SceanSystem.instance.LoadScene(SceneNames);
         }
-
     }
 }
