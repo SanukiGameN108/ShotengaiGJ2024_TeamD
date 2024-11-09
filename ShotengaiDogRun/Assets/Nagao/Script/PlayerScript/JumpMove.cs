@@ -22,7 +22,6 @@ public class JumpMove : MoveSystem_Base
         hit_ground = this.gameObject.GetComponent<Hit_Ground>();
     }
 
-    //スペースキーを押すとジャンプする関数。
     public void PushToJump()
     {
         //接地判定が空でなければ、ジャンプ処理は行わない。
