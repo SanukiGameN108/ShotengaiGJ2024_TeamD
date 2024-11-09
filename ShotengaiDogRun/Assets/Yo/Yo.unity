@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2e38bb178d748a8a3faac9e76cdc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 237895855690682567, guid: 44e1858d394dd4211a1204ddbc42cac1, type: 3}
+  groundCubePrefab: {fileID: 2161738257340440331, guid: 98a06ab2378cd42e699ca0bbe0998276, type: 3}
 --- !u!1 &1184544793
 GameObject:
   m_ObjectHideFlags: 0
