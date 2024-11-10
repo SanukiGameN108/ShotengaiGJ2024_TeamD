@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DogGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject dogPrefab;
-    private static readonly Vector3 initialPosition = new Vector3(0, 0, 0);
+    [SerializeField] private GameObject[] dogPrefabs;
+    private static readonly Vector3 initialPosition = new Vector3(4, 0, 0);
 
     void Start()
     {
@@ -13,13 +13,18 @@ public class DogGenerator : MonoBehaviour
     }
 
     void GenerateDog()
+{
+    if (dogPrefabs == null || dogPrefabs.Length == 0)
     {
-        if (dogPrefab == null)
-        {
-            Debug.LogWarning("DogGeneratorにPrefabが割り当てられていません！");
-            return;
-        }
-
-        Instantiate(dogPrefab, initialPosition, Quaternion.identity);
+        Debug.LogWarning("DogGeneratorにPrefabが割り当てられていません！");
+        return;
     }
+
+    int randomIndex = Random.Range(0, dogPrefabs.Length);
+    GameObject selectedDogPrefab = dogPrefabs[randomIndex];
+
+    GameObject dogInstance = Instantiate(selectedDogPrefab, initialPosition, Quaternion.identity);
+    dogInstance.transform.localScale *= 2;
+}
+
 }
