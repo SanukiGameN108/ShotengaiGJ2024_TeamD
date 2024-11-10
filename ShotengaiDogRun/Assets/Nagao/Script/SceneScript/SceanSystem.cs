@@ -21,12 +21,6 @@ public class SceanSystem : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //指定のシーンを読み込む。
     public void LoadScene(string SceneName)
     {
