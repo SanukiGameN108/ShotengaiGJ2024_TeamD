@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Controller : MonoBehaviour
+public class Player_Controller : MoveSystem_Base
 {
+    public Player_Controller() : base()
+    {
+
+    }
+
     //動作に必要なインスタンスを取得。
     //移動関連
     [SerializeField]
@@ -70,6 +75,7 @@ public class Player_Controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "DamageObject")
         {
+            SoundSystem.instance.PlaySEs(2);
             gameObject.transform.Translate(0, 0, -1);
 
         }

@@ -831,6 +831,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 934234446}
     - target: {fileID: 8033781379538541286, guid: 4d0e27acd108e462cb85e06ed536f258, type: 3}
+      propertyPath: DamagePower
+      value: 7.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033781379538541286, guid: 4d0e27acd108e462cb85e06ed536f258, type: 3}
       propertyPath: cooltimebool
       value: 
       objectReference: {fileID: 934234445}
