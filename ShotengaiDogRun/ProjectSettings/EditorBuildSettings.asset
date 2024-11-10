@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nagao/NagaoScene/Resoult.unity
     guid: 281e68f72a540bc4fade3a871fc0dc3a
+  - enabled: 1
+    path: Assets/Nagao/NagaoScene/GameOver.unity
+    guid: 7c96ba5996a39204d864b9ad2d7d057b
   m_configObjects: {}

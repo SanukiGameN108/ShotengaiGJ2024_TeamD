@@ -21,6 +21,7 @@ public class TimeManager : MonoBehaviour
     {
         TimeCounting();
         TextScreen();
+        CenserGameOver();
     }
 
     //制限時間を計測。
@@ -34,5 +35,14 @@ public class TimeManager : MonoBehaviour
     private void TextScreen()
     {
         text.text = "Time "+TimeSystem.instance.timeGetter().ToString("F1");
+    }
+
+    /// <summary>
+    /// タイムが０になったのを判定する。
+    /// </summary>
+    private void CenserGameOver()
+    {
+        if (TimeSystem.instance.timeGetter() <= 0)
+            SceanSystem.instance.LoadScene("GameOver");
     }
 }
