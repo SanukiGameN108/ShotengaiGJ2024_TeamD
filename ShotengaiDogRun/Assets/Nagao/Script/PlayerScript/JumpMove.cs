@@ -34,6 +34,7 @@ public class JumpMove : MoveSystem_Base
             if (hit_ground.Is_HittingGround() && Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("ƒWƒƒƒ“ƒv");
+                SoundSystem.instance.PlaySEs(0);
                 rb.AddForce(new Vector3(0, JumpPower, 0),ForceMode.Impulse);
             }
         }

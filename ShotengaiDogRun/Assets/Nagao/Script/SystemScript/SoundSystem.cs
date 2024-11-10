@@ -9,8 +9,13 @@ public class SoundSystem : MonoBehaviour
     [SerializeField]
     private AudioSource audio=null;
 
+    //BGMのリスト
     [SerializeField]
     private List<AudioClip> sounds = new List<AudioClip>();
+
+    //SEのリスト
+    [SerializeField]
+    private List<AudioClip> ses = new List<AudioClip>();
     // Start is called before the first frame update
 
     void Awake()
@@ -26,9 +31,15 @@ public class SoundSystem : MonoBehaviour
         }
     }
 
-    //サウンドを変数で指定。
+    //BGMを変数で指定。
     public void PlaySounds(int SoundNumber)
     {
         audio.PlayOneShot(sounds[SoundNumber]);
+    }
+
+    //SEを変数で指定。
+    public void PlaySEs(int SoundNumber)
+    {
+        audio.PlayOneShot(ses[SoundNumber]);
     }
 }
