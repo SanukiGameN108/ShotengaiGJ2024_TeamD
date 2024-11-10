@@ -1312,51 +1312,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e671afe92bca9c4b99894a6b26ae93d, type: 3}
---- !u!1 &1706513277
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1706513279}
-  - component: {fileID: 1706513278}
-  m_Layer: 0
-  m_Name: TamadixGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1706513278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706513277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a65a18357f8b430d8985e0a18c8e124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tamadixPrefab: {fileID: 4320396730943981823, guid: 28c4bed6f498f4ced8f72c8e739d47dd, type: 3}
---- !u!4 &1706513279
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1706513277}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.23654938, z: -0.02106905}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1751653012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1677,6 @@ SceneRoots:
   - {fileID: 139389923}
   - {fileID: 1213309147}
   - {fileID: 1165926636}
-  - {fileID: 1706513279}
   - {fileID: 1475536305}
   - {fileID: 1389845243}
   - {fileID: 2085842815}
