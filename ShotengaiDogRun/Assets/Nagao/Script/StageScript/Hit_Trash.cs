@@ -17,8 +17,8 @@ public class Hit_Trash : CollisionHit
     public override void HitEnter(Collision collision)
     {
         ScoreSystem.instance.AddScore(AddScoreSize);
+        Destroy(gameObject, 0.01f);
         SoundSystem.instance.PlaySEs(1);
-        Destroy(gameObject,0.01f);
     }
 
     private void OnCollisionEnter(Collision collision)
