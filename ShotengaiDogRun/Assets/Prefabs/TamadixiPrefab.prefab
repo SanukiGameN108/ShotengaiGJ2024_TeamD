@@ -50,8 +50,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e744d02727b9447a9072d95a332e509, type: 3}
       propertyPath: m_Name
-      value: tamadixi
+      value: TamadixiPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0e744d02727b9447a9072d95a332e509, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4230a2360f570434eb356aa87acf8857, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
