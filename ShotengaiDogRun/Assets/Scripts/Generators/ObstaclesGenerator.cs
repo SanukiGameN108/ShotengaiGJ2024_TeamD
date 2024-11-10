@@ -30,7 +30,8 @@ public class ObstaclesGenerator : MonoBehaviour
             if (selectedPrefab != null)
             {
                 Vector3 randomPosition = new Vector3(randomPosX, initialPosition.y, initialPosition.z);
-                Instantiate(selectedPrefab, randomPosition, Quaternion.identity);
+                Quaternion rotation = Quaternion.Euler(0, 180, 0);
+                Instantiate(selectedPrefab, randomPosition, rotation);
             }
         }
     }
