@@ -19,7 +19,7 @@ public class TamadixGenerator : MonoBehaviour
             Debug.LogWarning("TamadixGeneratorにPrefabが割り当てられていません！");
             return;
         }
-
-        Instantiate(tamadixPrefab, initialPosition, Quaternion.identity);
+        Quaternion rotation = Quaternion.Euler(0, 90, 0);
+        Instantiate(tamadixPrefab, initialPosition, rotation);
     }
 }
