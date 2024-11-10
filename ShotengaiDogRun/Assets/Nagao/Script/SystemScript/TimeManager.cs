@@ -1,23 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
-    private void Start()
+    [SerializeField]
+    [Tooltip("テキストを設定")]
+    private TextMeshProUGUI text;
+    
+
+    //制限時間をセット。
+    private void Awake()
     {
-        
+        TimeSystem.instance.SetTime();
     }
-    // Update is called once per frame
+    // Update is called once per fram
+    
     void Update()
     {
         TimeCounting();
+        TextScreen();
     }
 
     //制限時間を計測。
-    void TimeCounting()
+    private void TimeCounting()
     {
         TimeSystem.instance.CountDownTime();
         TimeSystem.instance.CountOneSecond();
+    }
+
+    //残り時間をテキスト表示
+    private void TextScreen()
+    {
+        text.text = "Time "+TimeSystem.instance.timeGetter().ToString("F1");
     }
 }
