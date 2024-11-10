@@ -34,6 +34,6 @@ public class TimeManager : MonoBehaviour
     //残り時間をテキスト表示
     private void TextScreen()
     {
-        text.text = "Time "+TimeSystem.instance.timeGetter();
+        text.text = "Time "+TimeSystem.instance.timeGetter().ToString("F1");
     }
 }
