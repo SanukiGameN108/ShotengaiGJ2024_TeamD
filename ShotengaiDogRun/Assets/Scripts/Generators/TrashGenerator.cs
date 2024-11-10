@@ -30,7 +30,8 @@ public class TrashGenerator : MonoBehaviour
             if (selectedPrefab != null)
             {
                 Vector3 randomPosition = new Vector3(randomPosX, initialPosition.y, initialPosition.z);
-                Instantiate(selectedPrefab, randomPosition, Quaternion.identity);
+                Quaternion rotation = Quaternion.Euler(-90, 0, 0);
+                Instantiate(selectedPrefab, randomPosition, rotation);
             }
         }
     }
