@@ -26,6 +26,10 @@ public class Player_Controller : MonoBehaviour
     [Tooltip("クールタイム処理用のクラス。")]
     private CoolTimeBool cooltimebool = null;
 
+    [SerializeField]
+    [Tooltip("メインカメラ設定用のクラス。")]
+    private GetMainCameraScript getmaincamerascript = null;
+
     private void Start()
     {
         //クールタイム処理を設定。
@@ -44,6 +48,8 @@ public class Player_Controller : MonoBehaviour
         {
             cooltimebool.CountDown();
         }
+
+        CameraSettings();
     }
 
     //移動関連の処理。
@@ -51,6 +57,12 @@ public class Player_Controller : MonoBehaviour
     {
         widemove.MovingRight();
         jumpmove.PushToJump();
+    }
+
+    //カメラ設定用のクラス。
+    public void CameraSettings()
+    {
+        getmaincamerascript.SetNowPos();
     }
 
     private void OnCollisionEnter(Collision collision)

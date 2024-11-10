@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: -5381575764682732745}
   m_Layer: 0
   m_Name: Simple Retro Car
-  m_TagString: Untagged
+  m_TagString: DamageObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

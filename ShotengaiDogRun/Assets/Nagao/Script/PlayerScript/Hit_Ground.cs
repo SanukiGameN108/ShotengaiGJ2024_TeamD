@@ -26,7 +26,10 @@ public class Hit_Ground : CollisionHit
 
     private void OnTriggerStay(Collider other)
     {
-        HitStay(other);
+        if(other.gameObject.tag== "Ground")
+        {
+            HitStay(other);
+        }
     }
 
     private void OnTriggerExit(Collider other)

@@ -34,7 +34,7 @@ public class TimeSystem : MonoBehaviour
     }
 
     //制限時間のセット。
-    public void SetTime()
+    public void SetDefaultTime()
     {
         TimeLimit = TimeLimit_Set;
     }

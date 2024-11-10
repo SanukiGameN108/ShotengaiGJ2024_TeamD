@@ -8,6 +8,10 @@ public class JumpMove : MoveSystem_Base
     [Tooltip("ジャンプ力")]
     float JumpPower = 0;
 
+    [SerializeField]
+    [Tooltip("重力")]
+    float GravityScale = 0;
+
     //接地判定用インスタンス
     private Hit_Ground hit_ground=null;
 
@@ -37,5 +41,8 @@ public class JumpMove : MoveSystem_Base
         {
             Debug.Log("接地判定用のコリジョンがありません");
         }
+
+        //常に重力を加算する。
+        rb.AddForce(Physics.gravity * GravityScale + Physics.gravity);
     }
 }

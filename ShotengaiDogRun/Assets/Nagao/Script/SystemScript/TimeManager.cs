@@ -9,12 +9,11 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     [Tooltip("テキストを設定")]
     private TextMeshProUGUI text;
-    
 
-    //制限時間をセット。
-    private void Awake()
+    //デフォルトの制限時間をセット。
+    private void Start()
     {
-        TimeSystem.instance.SetTime();
+        TimeSystem.instance.SetDefaultTime();
     }
     // Update is called once per fram
     
