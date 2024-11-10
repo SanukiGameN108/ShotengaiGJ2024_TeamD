@@ -23,6 +23,6 @@ public class GetMainCameraScript : MonoBehaviour
     /// </summary>
     public void SetNowPos()
     {
-        maincamera.transform.position = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y, -Moveaway);
+        maincamera.transform.position = new Vector3(gameObject.transform.position.x,0, -Moveaway);
     }
 }
