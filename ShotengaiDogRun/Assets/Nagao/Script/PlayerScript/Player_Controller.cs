@@ -39,16 +39,17 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //クールタイムが解消されていれば、動くことができる。
-        if (cooltimebool.Is_CoolTime_Clear())
+        //クールタイムが解消されていれば、動くことができる。（今は一時的にクールタイム処理話。追加するなら無敵時間を付与する必要アリ。）
+        /*if (cooltimebool.Is_CoolTime_Clear())
         {
             Move();
         }
         else
         {
             cooltimebool.CountDown();
-        }
+        }*/
 
+        Move();
         CameraSettings();
     }
 
@@ -69,8 +70,8 @@ public class Player_Controller : MonoBehaviour
     {
         if (collision.gameObject.tag == "DamageObject")
         {
-            Debug.Log("Hit");
-            cooltimebool.SetCoolTime();
+            gameObject.transform.Translate(0, 0, -1);
+
         }
     }
 }
