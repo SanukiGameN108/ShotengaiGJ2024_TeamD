@@ -22,8 +22,8 @@ public class DogGenerator : MonoBehaviour
 
     int randomIndex = Random.Range(0, dogPrefabs.Length);
     GameObject selectedDogPrefab = dogPrefabs[randomIndex];
-
-    GameObject dogInstance = Instantiate(selectedDogPrefab, initialPosition, Quaternion.identity);
+    Quaternion rotation = Quaternion.Euler(0, 90, 0);
+    GameObject dogInstance = Instantiate(selectedDogPrefab, initialPosition, rotation);
     dogInstance.transform.localScale *= 2;
 }
 

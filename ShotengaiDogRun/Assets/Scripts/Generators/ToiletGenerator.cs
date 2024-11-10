@@ -6,7 +6,7 @@ public class ToiletGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] toiletPrefabs;
     private static readonly Vector3 initialPosition = new Vector3(0, -2, 0);
-    private static readonly int TOILET_COUNT = 10;  // 生成するゴミの数
+    private static readonly int TOILET_COUNT = 10;
 
     void Start()
     {
@@ -30,7 +30,8 @@ public class ToiletGenerator : MonoBehaviour
             if (selectedPrefab != null)
             {
                 Vector3 randomPosition = new Vector3(randomPosX, initialPosition.y, initialPosition.z);
-                Instantiate(selectedPrefab, randomPosition, Quaternion.identity);
+                Quaternion rotation = Quaternion.Euler(0, 180, 0);
+                Instantiate(selectedPrefab, randomPosition, rotation);
             }
         }
     }
