@@ -780,7 +780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7888486937871897700, guid: 4d0e27acd108e462cb85e06ed536f258, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.94
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7888486937871897700, guid: 4d0e27acd108e462cb85e06ed536f258, type: 3}
       propertyPath: m_LocalPosition.z
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  MoveSpeed: 0.1
+  MoveSpeed: 0.05
   DamagePower: 20
 --- !u!114 &934234448
 MonoBehaviour:
