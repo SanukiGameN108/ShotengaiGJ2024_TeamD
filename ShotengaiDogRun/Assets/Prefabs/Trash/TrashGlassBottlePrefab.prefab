@@ -9,13 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8360830406747107042}
+  - component: {fileID: -7347388920772085484}
   - component: {fileID: 4486220790412308582}
   - component: {fileID: 9054042944652658814}
   - component: {fileID: 6185983543670907359}
   - component: {fileID: 7492110689133266009}
   m_Layer: 0
   m_Name: TrashGlassBottlePrefab
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 270, z: 0}
+--- !u!114 &-7347388920772085484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798745719895892534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230d880fcd775bb45900574a7e352911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  AddScoreSize: 10
 --- !u!33 &4486220790412308582
 MeshFilter:
   m_ObjectHideFlags: 0
