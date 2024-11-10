@@ -16,7 +16,7 @@ public class WideMove : MoveSystem_Base
     //©“®“I‚É‰E‚ÉˆÚ“®‚·‚éŠÖ”B
     public void MovingRight()
     {
-        gameObject.transform.Translate(MoveSpeed,0,0);
+        gameObject.transform.Translate(0,0, MoveSpeed);
     }
 
      
