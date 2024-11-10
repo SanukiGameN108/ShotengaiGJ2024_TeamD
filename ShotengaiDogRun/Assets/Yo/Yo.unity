@@ -545,6 +545,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toiletPrefabs:
   - {fileID: 1093240827259402, guid: 9ae76137503f94413b49fc34164afb4d, type: 3}
+--- !u!1 &1434809919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434809920}
+  - component: {fileID: 1434809921}
+  m_Layer: 0
+  m_Name: DogGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1434809920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434809919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 184.49, y: 0.38720375, z: 231.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434809921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434809919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6380e41aca25344898cd187643b636ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogPrefabs:
+  - {fileID: 2622512946322807860, guid: d539271d41e824bc392406a851c6f4df, type: 3}
+  - {fileID: 8828076113903832933, guid: 8aa034cdd5253459482907289c718fd9, type: 3}
+  - {fileID: 2662255452190826242, guid: d983f497dfc0c4f01bcda352a58e7ccb, type: 3}
+  - {fileID: 1921986906969165800, guid: e272d9256011241ae90550c4a4d583d6, type: 3}
+  - {fileID: 7388509527899908395, guid: d79d09942930b4b379ff83382ed31fea, type: 3}
 --- !u!1 &1508870694
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,3 +701,4 @@ SceneRoots:
   - {fileID: 1360808977}
   - {fileID: 1122880623}
   - {fileID: 786653834}
+  - {fileID: 1434809920}
