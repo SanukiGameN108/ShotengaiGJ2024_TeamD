@@ -5,12 +5,12 @@ using UnityEngine;
 public class GetMainCameraScript : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("ƒJƒƒ‰—pƒCƒ“ƒXƒ^ƒ“ƒX")]
+    [Tooltip("ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½X")]
     private Camera maincamera = null;
 
     [SerializeField]
-    [Tooltip("ƒvƒŒƒCƒ„[‚Ö‚ÌÚ‹ß“x")]
-    private float Moveaway = 20;
+    [Tooltip("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ö‚ÌÚ‹ß“x")]
+    private float Moveaway;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +19,14 @@ public class GetMainCameraScript : MonoBehaviour
     }
 
     /// <summary>a
-    /// Œ»İ’n‚ÉƒJƒƒ‰‚ğˆÚ‚·B
+    /// ï¿½ï¿½ï¿½İ’nï¿½ÉƒJï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú‚ï¿½ï¿½B
     /// </summary>
-    public void SetNowPos()
+public void SetNowPos()
     {
-        maincamera.transform.position = new Vector3(gameObject.transform.position.x,0, -Moveaway);
+        maincamera.transform.position = new Vector3(
+            gameObject.transform.position.x,
+            maincamera.transform.position.y,
+            -Moveaway
+        );
     }
 }

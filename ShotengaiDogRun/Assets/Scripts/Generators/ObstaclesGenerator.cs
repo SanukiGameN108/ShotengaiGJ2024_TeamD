@@ -6,7 +6,7 @@ public class ObstaclesGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] obstaclesPrefabs;
     private static readonly Vector3 initialPosition = new Vector3(0, -2.5f, 0);
-    private static readonly int OBSTACLES_COUNT = 15;  // 生成する障害物の数
+    private static readonly int OBSTACLES_COUNT = 10;  // 生成する障害物の数
 
     void Start()
     {

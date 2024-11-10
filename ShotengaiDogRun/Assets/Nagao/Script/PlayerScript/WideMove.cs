@@ -5,11 +5,11 @@ using UnityEngine;
 public class WideMove : MoveSystem_Base
 {
     [SerializeField]
-    [Tooltip("ˆÚ“®ƒXƒs[ƒh")]
+    [Tooltip("ï¿½Ú“ï¿½ï¿½Xï¿½sï¿½[ï¿½h")]
     private float MoveSpeed = 0;
 
     [SerializeField]
-    [Tooltip("áŠQ•¨‚ÉŒƒ“Ë‚µ‚½Žž‚Ì‚Á”ò‚Î‚³‚ê‚é‹——£")]
+    [Tooltip("ï¿½ï¿½Qï¿½ï¿½ï¿½ÉŒï¿½ï¿½Ë‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½é‹—ï¿½ï¿½")]
     private float DamagePower = 1;
 
     public WideMove(): base()
@@ -17,10 +17,17 @@ public class WideMove : MoveSystem_Base
 
     }
 
-    //Ž©“®“I‚É‰E‚ÉˆÚ“®‚·‚éŠÖ”B
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½É‰Eï¿½ÉˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½Öï¿½ï¿½B
     public void MovingRight()
     {
-        gameObject.transform.Translate(0,0, MoveSpeed);
+        if (gameObject.transform.position.y > -3)
+        {
+            gameObject.transform.Translate(0, 0, MoveSpeed);
+        }
+        else
+        {
+            MoveSpeed = 0;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

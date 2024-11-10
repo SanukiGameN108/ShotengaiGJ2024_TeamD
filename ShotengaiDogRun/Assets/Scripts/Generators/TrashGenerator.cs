@@ -6,7 +6,7 @@ public class TrashGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] trashPrefabs;
     private static readonly Vector3 initialPosition = new Vector3(0, -2, 0);
-    private static readonly int TRASH_COUNT = 10;  // 生成するゴミの数
+    private static readonly int TRASH_COUNT = 20;  // 生成するゴミの数
 
     void Start()
     {
