@@ -17,4 +17,9 @@ public class SoundManager : MonoBehaviour
     {
         SoundSystem.instance.PlaySounds(BGMnumber);
     }
+
+    private void OnDestroy()
+    {
+        SoundSystem.instance.StopSounds();
+    }
 }

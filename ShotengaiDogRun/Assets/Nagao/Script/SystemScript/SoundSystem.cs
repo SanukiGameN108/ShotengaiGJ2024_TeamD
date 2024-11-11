@@ -31,15 +31,21 @@ public class SoundSystem : MonoBehaviour
         }
     }
 
-    //BGMを変数で指定。
+    //BGMを変数で指定して再生。
     public void PlaySounds(int SoundNumber)
     {
         audio.PlayOneShot(sounds[SoundNumber]);
     }
 
-    //SEを変数で指定。
+    //SEを変数で指定して再生。
     public void PlaySEs(int SoundNumber)
     {
         audio.PlayOneShot(ses[SoundNumber]);
+    }
+
+    //流れている音楽を停止させる。
+    public void StopSounds()
+    {
+        audio.Stop();
     }
 }
