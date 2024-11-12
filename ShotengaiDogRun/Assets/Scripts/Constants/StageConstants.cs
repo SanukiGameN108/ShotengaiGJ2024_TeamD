@@ -17,6 +17,9 @@ public static class StageConstants
     public static readonly Vector3 OBSTACLES_POSITION = new Vector3(0, -2.2f, -0.5f);
     public static readonly int OBSTACLES_COUNT = 50;
 
+    public static readonly Vector3 TOILET_POSITION = new Vector3(0, -2.5f, 0);
+    public static readonly int TOILET_COUNT = 25;
+
     public static readonly int[] hollPosXList = {
         50, 51, 70, 71, 72, 
         108, 109, 110, 
