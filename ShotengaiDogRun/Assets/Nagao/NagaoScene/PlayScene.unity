@@ -186,7 +186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclesPrefabs:
   - {fileID: 3638911070570068518, guid: 421fa858966d74ce8b95c60404efafe2, type: 3}
-  - {fileID: 6669599918551377397, guid: b73d2cfdb6e3a43aa9847d3357b1a630, type: 3}
 --- !u!4 &139389923
 Transform:
   m_ObjectHideFlags: 0
