@@ -44,15 +44,11 @@ public class Player_Controller : MoveSystem_Base
     // Update is called once per frame
     void Update()
     {
-        // クールタイムが終わっている場合に移動を行う
-        /*if (cooltimebool.Is_CoolTime_Clear())
+        bool isFallingGameOver = transform.position.y <= StageConstants.ABYSS_TOP_Y;
+        if (isFallingGameOver)
         {
-            Move();
+            SceanSystem.instance.LoadScene("GameOver");
         }
-        else
-        {
-            cooltimebool.CountDown();
-        }*/
 
         Move();
         CameraSettings();

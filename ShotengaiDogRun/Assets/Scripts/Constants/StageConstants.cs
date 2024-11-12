@@ -25,4 +25,6 @@ public static class StageConstants
     public static readonly int GROUND_X_COUNT = 350;
     public static readonly int GROUND_Y_COUNT = 3;
     public static readonly int GROUND_Z_COUNT = 5;
+
+    public static readonly float ABYSS_TOP_Y = -10f;
 }
