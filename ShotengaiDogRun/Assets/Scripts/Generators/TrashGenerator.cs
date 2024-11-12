@@ -5,8 +5,6 @@ using UnityEngine;
 public class TrashGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] trashPrefabs;
-    private static readonly Vector3 initialPosition = new Vector3(0, -2, 0);
-    private static readonly int TRASH_COUNT = 20;  // 生成するゴミの数
 
     void Start()
     {
@@ -21,7 +19,7 @@ public class TrashGenerator : MonoBehaviour
             return;
         }
 
-        for (int currentCount = 1; currentCount <= TRASH_COUNT; currentCount++)
+        for (int currentCount = 1; currentCount <= StageConstants.TRASH_COUNT; currentCount++)
         {
             float randomPosX = Random.Range(0, StageConstants.GROUND_X_COUNT);
             int randomIndex = Random.Range(0, trashPrefabs.Length);
@@ -29,7 +27,7 @@ public class TrashGenerator : MonoBehaviour
 
             if (selectedPrefab != null)
             {
-                Vector3 randomPosition = new Vector3(randomPosX, initialPosition.y, initialPosition.z);
+                Vector3 randomPosition = new Vector3(randomPosX, StageConstants.TRASH_POSITION.y, StageConstants.TRASH_POSITION.z);
                 Quaternion rotation = Quaternion.Euler(-90, 0, 0);
                 Instantiate(selectedPrefab, randomPosition, rotation);
             }
