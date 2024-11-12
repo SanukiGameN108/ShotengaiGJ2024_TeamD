@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ToiletGenerator : MonoBehaviour
 {
@@ -19,17 +20,26 @@ public class ToiletGenerator : MonoBehaviour
             return;
         }
 
-        for (int currentCount = 1; currentCount <= StageConstants.TOILET_COUNT; currentCount++)
+        int generatedCount = 0;
+
+        while (generatedCount < StageConstants.TOILET_COUNT)
         {
             float randomPosX = Random.Range(0, StageConstants.GROUND_X_COUNT);
-            int randomIndex = Random.Range(0, toiletPrefabs.Length);
-            GameObject selectedPrefab = toiletPrefabs[randomIndex];
 
-            if (selectedPrefab != null)
+            // randomPosXが穴の位置リストに含まれていないかを確認
+            bool isNotHollPosX = !StageConstants.hollPosXList.Contains((int)randomPosX);
+            if (isNotHollPosX)
             {
-                Vector3 randomPosition = new Vector3(randomPosX, StageConstants.TOILET_POSITION.y, StageConstants.TOILET_POSITION.z);
-                Quaternion rotation = Quaternion.Euler(0, 180, 0);
-                Instantiate(selectedPrefab, randomPosition, rotation);
+                int randomIndex = Random.Range(0, toiletPrefabs.Length);
+                GameObject selectedPrefab = toiletPrefabs[randomIndex];
+
+                if (selectedPrefab != null)
+                {
+                    Vector3 randomPosition = new Vector3(randomPosX, StageConstants.TOILET_POSITION.y, StageConstants.TOILET_POSITION.z);
+                    Quaternion rotation = Quaternion.Euler(0, 180, 0);
+                    Instantiate(selectedPrefab, randomPosition, rotation);
+                    generatedCount++;
+                }
             }
         }
     }
