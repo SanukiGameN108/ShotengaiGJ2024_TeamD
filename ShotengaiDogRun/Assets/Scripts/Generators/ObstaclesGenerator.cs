@@ -4,8 +4,6 @@ using System.Linq;
 public class ObstaclesGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] obstaclesPrefabs;
-    private static readonly Vector3 initialPosition = new Vector3(0, -2.5f, 0);
-    private static readonly int OBSTACLES_COUNT = 10;  // 生成する障害物の数
 
     void Start()
     {
@@ -22,7 +20,7 @@ public class ObstaclesGenerator : MonoBehaviour
 
         int generatedCount = 0;
 
-        while (generatedCount < OBSTACLES_COUNT)
+        while (generatedCount < StageConstants.OBSTACLES_COUNT)
         {
             float randomPosX = Random.Range(0, StageConstants.GROUND_X_COUNT);
 
@@ -34,7 +32,7 @@ public class ObstaclesGenerator : MonoBehaviour
 
                 if (selectedPrefab != null)
                 {
-                    Vector3 randomPosition = new Vector3(randomPosX, initialPosition.y, initialPosition.z);
+                    Vector3 randomPosition = new Vector3(randomPosX, StageConstants.OBSTACLES_POSITION.y, StageConstants.OBSTACLES_POSITION.z);
                     Quaternion rotation = Quaternion.Euler(0, 180, 0);
                     Instantiate(selectedPrefab, randomPosition, rotation);
                     generatedCount++;

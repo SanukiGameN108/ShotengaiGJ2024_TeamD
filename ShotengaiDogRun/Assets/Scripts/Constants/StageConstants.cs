@@ -9,10 +9,13 @@ public static class StageConstants
 {
     public static readonly Vector3 GROUND_CUBE_SCALE = new Vector3(1, 1, 1);
 
-    public static readonly Vector3 GROUND_STARTING_POSITION = new Vector3(-20, -5, 0);
+    public static readonly Vector3 GROUND_STARTING_POSITION = new Vector3(-20, -5, -2);
     public static readonly int GROUND_X_COUNT = 1000;
     public static readonly int GROUND_Y_COUNT = 3;
-    public static readonly int GROUND_Z_COUNT = 5;
+    public static readonly int GROUND_Z_COUNT = 4;
+
+    public static readonly Vector3 OBSTACLES_POSITION = new Vector3(0, -2.2f, -0.5f);
+    public static readonly int OBSTACLES_COUNT = 50;
 
     public static readonly int[] hollPosXList = {
         50, 51, 70, 71, 72, 
