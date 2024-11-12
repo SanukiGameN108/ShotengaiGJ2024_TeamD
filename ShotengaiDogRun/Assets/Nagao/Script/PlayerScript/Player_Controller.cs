@@ -69,10 +69,6 @@ public class Player_Controller : MoveSystem_Base
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "DamageObject")
-        {
-            gameObject.transform.Translate(0, 0, -1);
-            SoundSystem.instance.PlaySEs(2);
-        }
+        
     }
 }
