@@ -5,22 +5,22 @@ using UnityEngine;
 public class JumpMove : MoveSystem_Base
 {
     [SerializeField]
-    [Tooltip("ƒWƒƒƒ“ƒv—Í")]
+    [Tooltip("ã‚¸ãƒ£ãƒ³ãƒ—åŠ›")]
     float JumpPower = 0;
 
     [SerializeField]
-    [Tooltip("d—Í")]
+    [Tooltip("é‡åŠ›ã‚¹ã‚±ãƒ¼ãƒ«")]
     float GravityScale = 0;
 
-    //Ú’n”»’è—pƒCƒ“ƒXƒ^ƒ“ƒX
-    private Hit_Ground hit_ground=null;
+    // åœ°é¢ã¨ã®æ¥è§¦åˆ¤å®šç”¨ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+    private Hit_Ground hit_ground = null;
 
     public JumpMove() : base()
     {
 
     }
 
-    //Ú’n”»’è‚ğæ“¾BAwake‚Æ‚Í•ª‚¯‚Ä‘‚­B
+    // åœ°é¢ã¨ã®æ¥è§¦åˆ¤å®šã‚’å–å¾—ã™ã‚‹
     private void Start()
     {
         hit_ground = this.gameObject.GetComponent<Hit_Ground>();
@@ -28,22 +28,22 @@ public class JumpMove : MoveSystem_Base
 
     public void PushToJump()
     {
-        //Ú’n”»’è‚ª‹ó‚Å‚È‚¯‚ê‚ÎAƒWƒƒƒ“ƒvˆ—‚Ís‚í‚È‚¢B
+        // åœ°é¢ã«æ¥è§¦ã—ã¦ã„ã‚‹å ´åˆã€ã‚¸ãƒ£ãƒ³ãƒ—åŠ›ã§åŠ›ã‚’åŠ ãˆã‚‹
         if (hit_ground != null)
         {
             if (hit_ground.Is_HittingGround() && Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("ƒWƒƒƒ“ƒv");
+                Debug.Log("ã‚¸ãƒ£ãƒ³ãƒ—");
                 rb.AddForce(new Vector3(0, JumpPower, 0), ForceMode.Impulse);
                 SoundSystem.instance.PlaySEs(0);
             }
         }
         else
         {
-            Debug.Log("Ú’n”»’è—p‚ÌƒRƒŠƒWƒ‡ƒ“‚ª‚ ‚è‚Ü‚¹‚ñ");
+            Debug.Log("åœ°é¢åˆ¤å®šãŒå–å¾—ã§ãã¾ã›ã‚“ã§ã—ãŸ");
         }
 
-        //í‚Éd—Í‚ğ‰ÁZ‚·‚éB
+        // é‡åŠ›ã‚’é©ç”¨
         rb.AddForce(Physics.gravity * GravityScale + Physics.gravity);
     }
 }
