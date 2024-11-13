@@ -9,63 +9,59 @@ public class Player_Controller : MoveSystem_Base
 
     }
 
-    //“®ì‚É•K—v‚ÈƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾B
-    //ˆÚ“®ŠÖ˜A
+    // ç§»å‹•é–¢é€£ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’å‚ç…§
+    // å·¦å³ç§»å‹•
     [SerializeField]
-    [Tooltip("‰¡ˆÚ“®‚ÌƒNƒ‰ƒX")]
-    private WideMove widemove=null;
+    [Tooltip("å·¦å³ç§»å‹•ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
+    private WideMove widemove = null;
 
     [SerializeField]
-    [Tooltip("‰¡ˆÚ“®‚ÌƒNƒ‰ƒX")]
-    private JumpMove jumpmove=null;
+    [Tooltip("ã‚¸ãƒ£ãƒ³ãƒ—ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
+    private JumpMove jumpmove = null;
 
     [SerializeField]
-    [Tooltip("áŠQ•¨ÚG‚ÌƒNƒ‰ƒX")]
+    [Tooltip("ãƒ’ãƒƒãƒˆãƒ€ãƒ¡ãƒ¼ã‚¸ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
     private Hit_Damage hit_damage = null;
 
     [SerializeField]
-    [Tooltip("Ú’n”»’è‚ÌƒNƒ‰ƒX")]
-    private Hit_Ground hit_ground=null;
+    [Tooltip("åœ°é¢ã¨ã®æ¥è§¦ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
+    private Hit_Ground hit_ground = null;
 
     [SerializeField]
-    [Tooltip("ƒN[ƒ‹ƒ^ƒCƒ€ˆ——p‚ÌƒNƒ‰ƒXB")]
+    [Tooltip("ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ã®ç®¡ç†ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
     private CoolTimeBool cooltimebool = null;
 
     [SerializeField]
-    [Tooltip("ƒƒCƒ“ƒJƒƒ‰İ’è—p‚ÌƒNƒ‰ƒXB")]
+    [Tooltip("ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ")]
     private GetMainCameraScript getmaincamerascript = null;
 
     private void Start()
     {
-        //ƒN[ƒ‹ƒ^ƒCƒ€ˆ—‚ğİ’èB
+        // ãƒ’ãƒƒãƒˆãƒ€ãƒ¡ãƒ¼ã‚¸ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã«ã‚¯ãƒ¼ãƒ«ã‚¿ã‚¤ãƒ ã‚’è¨­å®š
         hit_damage.SetAct(cooltimebool.SetCoolTime);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ƒN[ƒ‹ƒ^ƒCƒ€‚ª‰ğÁ‚³‚ê‚Ä‚¢‚ê‚ÎA“®‚­‚±‚Æ‚ª‚Å‚«‚éBi¡‚Íˆê“I‚ÉƒN[ƒ‹ƒ^ƒCƒ€ˆ—˜bB’Ç‰Á‚·‚é‚È‚ç–³“GŠÔ‚ğ•t—^‚·‚é•K—vƒAƒŠBj
-        /*if (cooltimebool.Is_CoolTime_Clear())
+        bool isFallingGameOver = transform.position.y <= StageConstants.ABYSS_TOP_Y;
+        if (isFallingGameOver)
         {
-            Move();
+            SceanSystem.instance.LoadScene("GameOver");
         }
-        else
-        {
-            cooltimebool.CountDown();
-        }*/
 
         Move();
         CameraSettings();
     }
 
-    //ˆÚ“®ŠÖ˜A‚Ìˆ—B
+    // å·¦å³ç§»å‹•ã€ã‚¸ãƒ£ãƒ³ãƒ—å‡¦ç†ã‚’è¡Œã†
     private void Move()
     {
         widemove.MovingRight();
         jumpmove.PushToJump();
     }
 
-    //ƒJƒƒ‰İ’è—p‚ÌƒNƒ‰ƒXB
+    // ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ä½ç½®ã‚’è¨­å®š
     public void CameraSettings()
     {
         getmaincamerascript.SetNowPos();
@@ -73,10 +69,6 @@ public class Player_Controller : MoveSystem_Base
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "DamageObject")
-        {
-            gameObject.transform.Translate(0, 0, -1);
-            SoundSystem.instance.PlaySEs(2);
-        }
+        
     }
 }

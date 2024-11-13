@@ -5,19 +5,19 @@ using UnityEngine;
 public class WideMove : MoveSystem_Base
 {
     [SerializeField]
-    [Tooltip("�ړ��X�s�[�h")]
+    [Tooltip("移動速度")]
     private float MoveSpeed = 0;
 
     [SerializeField]
-    [Tooltip("��Q���Ɍ��˂������̐�����΂���鋗��")]
+    [Tooltip("ダメージオブジェクトが当たったときのダメージ力")]
     private float DamagePower = 1;
 
-    public WideMove(): base()
+    public WideMove() : base()
     {
 
     }
 
-    //�����I�ɉE�Ɉړ�����֐��B
+    // 移動処理（右方向）
     public void MovingRight()
     {
         if (gameObject.transform.position.y > -3)
@@ -32,9 +32,5 @@ public class WideMove : MoveSystem_Base
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "DamageObject")
-        {
-            rb.AddForce(new Vector3(0,0,-MoveSpeed*DamagePower),ForceMode.Impulse);
-        }
     }
 }

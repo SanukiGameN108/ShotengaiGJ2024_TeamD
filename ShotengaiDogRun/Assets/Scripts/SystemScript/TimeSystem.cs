@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//§ŒÀŠÔŠÇ——p‚ÌƒVƒ“ƒOƒ‹ƒgƒ“ƒVƒXƒeƒ€B
+/// <summary>
+/// æ™‚é–“åˆ¶å¾¡ç”¨ã®ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ã‚¯ãƒ©ã‚¹
+/// </summary>
 public class TimeSystem : MonoBehaviour
 {
     public static TimeSystem instance;
 
     [SerializeField]
-    [Tooltip("§ŒÀŠÔ‚ÌƒZƒbƒgB")]
+    [Tooltip("åˆ¶é™æ™‚é–“ã®è¨­å®š")]
     private float TimeLimit_Set = 0;
 
-    //§ŒÀŠÔ
+    // ç¾åœ¨ã®åˆ¶é™æ™‚é–“
     private float TimeLimit = 0;
 
-    //ƒJƒEƒ“ƒg‚·‚éŠÔŠu‚ğƒZƒbƒgB
-    private const float One_Second_set = 60;
+    // ã‚«ã‚¦ãƒ³ãƒˆç”¨ã®1ç§’é–“è¨­å®š
+    private const float One_Second_Set = 60;
 
-    //ÀÛ‚ÉŠÔ‚ğƒJƒEƒ“ƒg‚·‚é•Ï”B
+    // 1ç§’ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹å¤‰æ•°
     private float One_Second = 60;
 
     void Awake()
@@ -33,38 +35,38 @@ public class TimeSystem : MonoBehaviour
         }
     }
 
-    //§ŒÀŠÔ‚ÌƒZƒbƒgB
+    // åˆ¶é™æ™‚é–“ã®è¨­å®š
     public void SetDefaultTime()
     {
         TimeLimit = TimeLimit_Set;
     }
 
-    //§ŒÀŠÔ‚ÌŒ¸­
+    // åˆ¶é™æ™‚é–“ã®ã‚«ã‚¦ãƒ³ãƒˆãƒ€ã‚¦ãƒ³
     public void CountDownTime()
     {
-        if(TimeLimit>0)
-        TimeLimit -= Time.deltaTime;
+        if (TimeLimit > 0)
+            TimeLimit -= Time.deltaTime;
 
-        Debug.Log("c‚èŠÔ"+TimeLimit);
+        Debug.Log("æ®‹ã‚Šæ™‚é–“: " + TimeLimit);
     }
 
-    //‚P•b‚ğ”‚¦‚éBƒgƒDƒ‹[‚È‚ç”‚¦I‚í‚Á‚½ó‘ÔB
+    // 1ç§’ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹ã€‚ã‚¿ã‚¤ãƒãƒ¼ãŒ1ç§’ã«é”ã—ãŸã‚‰trueã‚’è¿”ã™
     public bool CountOneSecond()
     {
-        if(One_Second>0)
+        if (One_Second > 0)
         {
             One_Second--;
             return false;
         }
         else
         {
-            One_Second = One_Second_set;
+            One_Second = One_Second_Set;
             return true;
         }
     }
 
     /// <summary>
-    /// c‚èŠÔ‚ğæ“¾B
+    /// æ®‹ã‚Šæ™‚é–“ã‚’å–å¾—
     /// </summary>
     /// <returns></returns>
     public float timeGetter()

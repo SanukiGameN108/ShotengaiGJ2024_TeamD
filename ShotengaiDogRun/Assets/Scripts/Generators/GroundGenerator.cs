@@ -35,7 +35,7 @@ public class GroundGenerator : MonoBehaviour
                     
                     // 配置位置を計算して設定
                     Vector3 diffPosition = new Vector3(x * groundCubeScale.x, y * groundCubeScale.y, z * groundCubeScale.z);
-                    Vector3 position = StageConstants.INITIAL_POSITION + diffPosition;
+                    Vector3 position = StageConstants.GROUND_STARTING_POSITION + diffPosition;
                     ground.transform.position = position;
                 }
             }
