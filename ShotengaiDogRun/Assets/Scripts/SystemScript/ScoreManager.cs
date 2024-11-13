@@ -6,13 +6,13 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("ƒeƒLƒXƒg‚ğİ’è")]
+    [Tooltip("ã‚¹ã‚³ã‚¢ã‚’è¡¨ç¤ºã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆ")]
     private TextMeshProUGUI text;
 
-    //ƒfƒtƒHƒ‹ƒg‚ÌƒXƒRƒA‚ğƒZƒbƒgB
+    // ã‚¹ã‚³ã‚¢ã‚·ã‚¹ãƒ†ãƒ ã®åˆæœŸåŒ–
     private void Start()
     {
-        //ƒfƒtƒHƒ‹ƒg‚ÌƒXƒRƒA‚ğİ’èB
+        // ã‚¹ã‚³ã‚¢ã‚·ã‚¹ãƒ†ãƒ ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚¹ã‚³ã‚¢ã‚’è¨­å®š
         ScoreSystem.instance.SetDfaultScore();
     }
 
@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
         TextScreen();
     }
 
-    //Œ»İ‚ÌƒXƒRƒA‚ğƒeƒLƒXƒg•\¦
+    // ã‚¹ã‚³ã‚¢ã‚’ç”»é¢ã«è¡¨ç¤ºã™ã‚‹
     private void TextScreen()
     {
         text.text = "Score " + ScoreSystem.instance.scoreGet();
