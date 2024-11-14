@@ -51,4 +51,10 @@ public class ScoreSystem : MonoBehaviour
     {
         Score += AddScores;
     }
+
+    //現在のスコアの値を設定。
+    public void SetterScore(int SetScore)
+    {
+        Score = SetScore;
+    }
 }

@@ -6,20 +6,24 @@ using UnityEngine.UI;
 public class UnchiBar : MonoBehaviour
 {
     public Slider unchiSlider;
-    public int unchiHP = 0;
+    public float unchiHP = 0;
     //currenHPによってスライダーが変わる
-    public int currenHP;
+    public float currenHP;
     public Image fillImage;
+
+    //うんちの値受け取り用
+    public UnchiGage Ug = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        currenHP = unchiHP;
+        unchiHP = Ug.GetterUnchi_Limit();
+        currenHP = Ug.GetterUnchi_Limit();
         unchiSlider.maxValue = unchiHP;
         UpdateHP();
     }
 
-    public void TakeUnchi(int unchi)
+    public void TakeUnchi(float unchi)
     {
         currenHP-=unchi;
         UpdateHP();
@@ -32,8 +36,17 @@ public class UnchiBar : MonoBehaviour
         //fillImage.color = new Color(0.65f, 0.32f, 0.17f);
     }
 
+    //うんちゲージの値をCurrentHPに同期させる。
+    void SynchronousUnchi()
+    {
+        currenHP = Ug.GetterUnchi();
+    }
+
     private void Update()
     {
         UpdateHP();
+        SynchronousUnchi();
+        Ug.DcreUnchi();
+        Ug.UnchiPenalty();
     }
 }

@@ -69,6 +69,10 @@ public class Player_Controller : MoveSystem_Base
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.gameObject.tag== "DamageObject")
+        {
+            rb.AddForce(new Vector3(0,0,300),ForceMode.Impulse);
+            Debug.Log("DamageHit");
+        }
     }
 }
