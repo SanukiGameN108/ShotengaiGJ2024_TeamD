@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - DamageObject
   - Trash
+  - Toilet
   layers:
   - Default
   - TransparentFX

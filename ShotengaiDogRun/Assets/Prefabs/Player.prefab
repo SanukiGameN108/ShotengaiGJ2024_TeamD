@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2710630362089822044}
   - component: {fileID: 5405963758779992777}
   - component: {fileID: 6035725526458704688}
+  - component: {fileID: -3003017866331194765}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   MoveSpeed: 0.05
-  DamagePower: 20
+  DamagePower: 1
 --- !u!114 &2710630362089822044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maincamera: {fileID: 0}
   Moveaway: 10
+--- !u!114 &-3003017866331194765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682461177915366243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2893fa25e617bb34988647b3ca66b17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  Ug: {fileID: 0}
 --- !u!1001 &4398087310176094839
 PrefabInstance:
   m_ObjectHideFlags: 0

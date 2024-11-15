@@ -29,7 +29,7 @@ public class UnchiGage : MonoBehaviour
     }
 
     //うんちゲージを設定するセッター。
-    public void SetterUnchi(int SetUnchi)
+    public void SetterUnchi(float SetUnchi)
     {
         Unchi_gagenumber = SetUnchi;
     }
@@ -56,6 +56,7 @@ public class UnchiGage : MonoBehaviour
         //スコアをリセット
         if(Unchi_gagenumber<=0)
         {
+            SoundSystem.instance.PlaySEs(4);
             Unchi_gagenumber = Unchi_gagenumber_set;
             ScoreSystem.instance.SetterScore(0);
         }
