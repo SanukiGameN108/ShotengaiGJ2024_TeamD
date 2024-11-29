@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1658475112244163993}
+  - component: {fileID: 2208130186062809985}
   - component: {fileID: 4073692202506283464}
   - component: {fileID: 4155486278766802193}
+  - component: {fileID: 986574417165805450}
   - component: {fileID: 565492393049113935}
   - component: {fileID: 4120287417668621978}
   - component: {fileID: 3599047609364513655}
@@ -42,6 +44,27 @@ Transform:
   - {fileID: 5004864090724594427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &2208130186062809985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682461177915366243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.28, y: 2.02, z: 1.87}
+  m_Center: {x: 0, y: 0.95, z: 0.46}
 --- !u!54 &4073692202506283464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82,12 +105,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  startstop: {fileID: 986574417165805450}
   widemove: {fileID: 3599047609364513655}
   jumpmove: {fileID: 565492393049113935}
   hit_damage: {fileID: 4120287417668621978}
   hit_ground: {fileID: 2710630362089822044}
   cooltimebool: {fileID: 5405963758779992777}
   getmaincamerascript: {fileID: 6035725526458704688}
+--- !u!114 &986574417165805450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3682461177915366243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9904f9a93d54e0b4fa7f541110f8c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StopTime: 0
+  cnttext: {fileID: 0}
 --- !u!114 &565492393049113935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  JumpPower: 8.77
+  JumpPower: 13
   GravityScale: -1
 --- !u!114 &4120287417668621978
 MonoBehaviour:
@@ -130,7 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   MoveSpeed: 0.05
-  DamagePower: 1
+  DamagePower: 5
+  Damage_CoolTime: 0
 --- !u!114 &2710630362089822044
 MonoBehaviour:
   m_ObjectHideFlags: 0

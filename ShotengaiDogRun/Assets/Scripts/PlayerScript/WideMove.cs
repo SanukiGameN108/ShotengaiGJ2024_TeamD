@@ -12,6 +12,10 @@ public class WideMove : MoveSystem_Base
     [Tooltip("ダメージオブジェクトが当たったときのダメージ力")]
     private float DamagePower = 1;
 
+    //ダメージを受けた時の、次にダメージを受けるまでのクールタイム。
+    [SerializeField]
+    private float Damage_CoolTime = 0;
+
     public WideMove() : base()
     {
 
@@ -28,9 +32,25 @@ public class WideMove : MoveSystem_Base
         {
             MoveSpeed = 0;
         }
+
+        DcreCoolTime();
+    }
+
+    private void DcreCoolTime()
+    {
+        if (Damage_CoolTime > 0)
+        {
+            Damage_CoolTime-=Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "DamageObject" && Damage_CoolTime<=0)
+        {
+            rb.AddForce(new Vector3(-DamagePower, 0, 0), ForceMode.Impulse);
+            Damage_CoolTime = 1;
+            Debug.Log("DamageHit");
+        }
     }
 }

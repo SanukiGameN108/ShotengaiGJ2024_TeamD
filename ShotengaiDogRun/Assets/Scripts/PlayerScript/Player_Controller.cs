@@ -9,6 +9,10 @@ public class Player_Controller : MoveSystem_Base
 
     }
 
+    [SerializeField]
+    [Tooltip("ゲームが始まっているかどうかを判定。")]
+    private StartStop startstop = null;
+
     // 移動関連のコンポーネントを参照
     // 左右移動
     [SerializeField]
@@ -37,6 +41,7 @@ public class Player_Controller : MoveSystem_Base
 
     private void Start()
     {
+        Debug.Log("aaa");
         // ヒットダメージのスクリプトにクールタイムを設定
         hit_damage.SetAct(cooltimebool.SetCoolTime);
     }
@@ -44,14 +49,21 @@ public class Player_Controller : MoveSystem_Base
     // Update is called once per frame
     void Update()
     {
-        bool isFallingGameOver = transform.position.y <= StageConstants.ABYSS_TOP_Y;
-        if (isFallingGameOver)
+        if (startstop.IsNoStop())
         {
-            SceanSystem.instance.LoadScene("GameOver");
+            bool isFallingGameOver = transform.position.y <= StageConstants.ABYSS_TOP_Y;
+            if (isFallingGameOver)
+            {
+                SceanSystem.instance.LoadScene("GameOver");
+            }
+            Move();
+            CameraSettings();
         }
-
-        Move();
-        CameraSettings();
+        else
+        {
+            startstop.DcreStop();
+            startstop.DisplayCnt(startstop.GetStop());
+        }
     }
 
     // 左右移動、ジャンプ処理を行う
@@ -65,14 +77,5 @@ public class Player_Controller : MoveSystem_Base
     public void CameraSettings()
     {
         getmaincamerascript.SetNowPos();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag== "DamageObject")
-        {
-            rb.AddForce(new Vector3(0,0,300),ForceMode.Impulse);
-            Debug.Log("DamageHit");
-        }
     }
 }

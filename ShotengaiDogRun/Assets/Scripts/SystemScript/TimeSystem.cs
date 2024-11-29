@@ -46,8 +46,6 @@ public class TimeSystem : MonoBehaviour
     {
         if (TimeLimit > 0)
             TimeLimit -= Time.deltaTime;
-
-        Debug.Log("残り時間: " + TimeLimit);
     }
 
     // 1秒をカウントする。タイマーが1秒に達したらtrueを返す
